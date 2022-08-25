@@ -1,0 +1,150 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap");
+
+:root {
+  --clr-primary-violet: hsl(263, 55%, 52%);
+  --clr-primary-dark-grayish-blue: hsl(217, 19%, 35%);
+  --clr-primary-dark-blackish-blue: hsl(219, 29%, 14%);
+  --clr-primary-white: hsl(0, 0%, 100%);
+  --clr-neutral-gray: hsl(0, 0%, 81%);
+  --clr-neutral-grayish-blue: hsl(210, 46%, 95%);
+
+  --bg-primary: var(--clr-neutral-grayish-blue);
+  --bg-white: var(--clr-primary-white);
+  --bg-violet: var(--clr-primary-violet);
+  --bg-dark-blue: var(--clr-primary-dark-blackish-blue);
+  --bg-dark-gray: var(--clr-primary-dark-grayish-blue);
+
+  --ff-main: "Barlow Semi Condensed", sans-serif;
+  --fs-sm: 0.813rem;
+  --fs-base: 0.938;
+  --fs-lg: 1.5rem;
+  --fw-500: 500;
+  --fw-600: 600;
+
+  --text-primary: var(--clr-primary-white);
+  --text-secondary: var(--clr-primary-dark-blackish-blue);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  max-height: 100vh;
+  background-color: var(--bg-primary);
+  font-family: var(--ff-main);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-500);
+  line-height: 1.5;
+}
+article {
+  color: var(--text-primary);
+}
+img {
+  height: 2.5rem;
+  width: 2.5rem;
+  border-radius: 50%;
+  margin-right: 0.625em;
+  border: 2px solid #996ed9;
+}
+h3 {
+  font-size: var(--fs-base);
+  /* margin-bottom: 0.625em; */
+}
+/* blocks */
+.testimonials {
+  max-width: 90rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  padding: 1.25em;
+  margin: 6.25rem auto;
+}
+.card {
+  padding: 1.875em;
+  border-radius: 10px;
+  width: 100%;
+}
+.card__header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.25em;
+}
+.card__header p {
+  font-size: var(--fs-sm);
+  opacity: 0.5;
+}
+.card__lead {
+  font-weight: var(--fw-600);
+  font-size: var(--fs-lg);
+  margin-bottom: 1.25em;
+  line-height: 1.3;
+}
+.card__qoute {
+  line-height: 1.3;
+  opacity: 0.7;
+}
+
+.card:nth-of-type(1) {
+  grid-column: 1/3;
+  background-image: url("./images/bg-pattern-quotation.svg");
+  background-repeat: no-repeat;
+  background-position: top 10px right 100px;
+}
+
+.card:nth-of-type(3) {
+  color: var(--text-secondary);
+  grid-column: 1/2;
+  grid-row: 2/3;
+}
+.card:nth-of-type(4) {
+  grid-column: 2/4;
+}
+.card:nth-of-type(5) {
+  color: var(--text-secondary);
+  grid-column: 4/5;
+  grid-row: 1/3;
+}
+
+/* utilities */
+.bg-white {
+  background-color: var(--bg-white);
+}
+.bg-violet {
+  background-color: var(--bg-violet);
+}
+.bg-gray {
+  background-color: var(--bg-dark-gray);
+}
+.bg-dark-blue {
+  background-color: var(--bg-dark-blue);
+}
+
+@media (max-width: 768px) {
+  .card:nth-of-type(1) {
+    grid-column: 1/5;
+    grid-row: 1/2;
+  }
+  .card:nth-of-type(2) {
+    grid-column: 1/5;
+    grid-row: 2/3;
+  }
+  .card:nth-of-type(3) {
+    grid-column: 1/5;
+    grid-row: 3/4;
+  }
+  .card:nth-of-type(4) {
+    grid-column: 1/5;
+    grid-row: 4/5;
+  }
+  .card:nth-of-type(5) {
+    grid-column: 1/5;
+    grid-row: 5;
+  }
+}
